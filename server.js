@@ -15,7 +15,7 @@ app.use(cors({
     credentials:true
 }));
 app.use(express.urlencoded({ extended: false }));
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4000;
 
 const dbURI = process.env.dbURI;
 mongoose
