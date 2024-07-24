@@ -9,12 +9,10 @@ app.use(express.static('public'));
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    credentials: true,
-    origin: 'https://accurateweather.vercel.app',
-    method: ["GET", "POST", "DELETE", "PUT"],
-    credentials:true,            
-    optionSuccessStatus: 200,
-    allowedHeaders: ['Content-Type', 'Authorization', 'x-csrf-token'],
+    origin:"https://accurateweather.vercel.app",
+    methods:["GET","POST","OPTIONS","PUT","PATCH","DELETE"],
+    allowedHeaders:["X-CSRF-Token","X-Requested-With","Accept","Accept-Version","Content-Length","Content-MD5","Content-Type","Date","X-Api-Version"],
+    credentials:true
 }));
 app.use(express.urlencoded({ extended: false }));
 const port = process.env.PORT || 8080;
